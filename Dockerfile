@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
-MAINTAINER Tim Haak <tim@haak.co.uk>
+FROM debian:jessie
+MAINTAINER Luiz Picanco <lpicanco@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SICKRAGE_VERSION master
@@ -8,6 +8,7 @@ ENV LC_ALL C.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
+    echo 'deb http://ftp.us.debian.org/debian jessie main contrib non-free' >>  /etc/apt/sources.list && \
     apt-get -q update && \
     apt-get -qy --force-yes dist-upgrade && \
     apt-get install -qy --force-yes python-cheetah wget tar ca-certificates curl unrar && \
@@ -20,7 +21,8 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     rm -rf /tmp/*
 
 VOLUME /config
-VOLUME /data
+VOLUME /media/data
+VOLUME /media/downloads
 
 ADD ./start.sh /start.sh
 RUN chmod u+x  /start.sh
