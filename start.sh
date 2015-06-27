@@ -38,11 +38,11 @@ else
 	touch /config/sickbeard.db.v43
 	touch /config/sickbeard.db.v44
 	cp -fr /sickrage/cache/* /config/cache/
-#	mv -f /sickbeard/autoprocesstv/autoProcessTV.cfg /config/autoProcessTV.cfg
 fi
 ln -sf /config/config.ini /sickrage/config.ini
 ln -sf /config/sickbeard.db* /sickrage/
-#ln -sf /config/cache /sickrage/cache
-#ln -sf /config/autoProcessTV.cfg sickbeard/autoprocesstv/autoProcessTV.cfg
+
+cd /sickrage
+git pull
 
 /usr/bin/python SickBeard.py
