@@ -12,10 +12,6 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     apt-get -q update && \
     apt-get -qy --force-yes dist-upgrade && \
     apt-get install -qy --force-yes python-cheetah wget tar ca-certificates curl unrar git && \
-#    curl -L https://github.com/SiCKRAGETV/SickRage/tarball/${SICKRAGE_VERSION} -o sickrage.tgz && \
-#    tar -xvf sickrage.tgz -C /  &&\
-#    mv /SiCKRAGETV-SickRage-* /sickrage/ &&\
-#    rm  /sickrage.tgz &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
