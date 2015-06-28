@@ -21,6 +21,7 @@ RUN git clone https://github.com/SiCKRAGETV/SickRage.git /sickrage
 VOLUME /config
 VOLUME /media/data
 VOLUME /media/downloads
+VOLUME /cache
 
 ADD ./start.sh /start.sh
 RUN chmod u+x  /start.sh

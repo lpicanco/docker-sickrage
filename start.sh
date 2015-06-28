@@ -2,6 +2,9 @@
 
 mkdir -p /config
 mkdir -p /config/cache
+mkdir -p /cache
+
+rm -rf /sickrage/cache
 
 cd /sickrage
 if [ -f /config/config.ini ]
@@ -41,6 +44,7 @@ else
 fi
 ln -sf /config/config.ini /sickrage/config.ini
 ln -sf /config/sickbeard.db* /sickrage/
+ln -sf /cache /sickrage/cache
 
 cd /sickrage
 git pull
