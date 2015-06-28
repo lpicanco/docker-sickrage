@@ -10,5 +10,7 @@ cd docker-sickrage
 docker build -t sickrage .
 ```
 
-docker run -d -h *your_host_name* -v /*your_config_location*:/config  -v /*your_videos_location*:/data -p 8081:8081 sickrage
-
+How to run
+```
+docker run --name sickrage -v /etc/sickrage/config:/config -v /etc/sickrage/cache:/cache -v /media/shows:/media/shows -v /media/torrent_downloads:/media/downloads -p 8081:8081 -d lpicanco/sickrage
+```
