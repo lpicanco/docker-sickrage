@@ -5,7 +5,7 @@ This is a Dockerfile to set up "SickRage" - (https://sickrage.tv/forums/)
 Build from docker file
 
 ```
-git clone git@github.com:timhaak/docker-sickrage.git
+git clone git@github.com:lpicanco/docker-sickrage.git
 cd docker-sickrage
 docker build -t sickrage .
 ```
