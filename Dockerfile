@@ -11,7 +11,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     echo 'deb http://ftp.us.debian.org/debian jessie main contrib non-free' >>  /etc/apt/sources.list && \
     apt-get -q update && \
     apt-get -qy --force-yes dist-upgrade && \
-    apt-get install -qy --force-yes python-cheetah wget tar ca-certificates curl unrar git && \
+    apt-get install -y --force-yes python-cheetah wget tar ca-certificates curl unrar git python-urllib3 && \
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
