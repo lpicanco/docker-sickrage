@@ -17,6 +17,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     rm -rf /tmp/*
 
 RUN git clone https://github.com/SiCKRAGETV/SickRage.git /sickrage
+RUN cd /sickrage && git checkout tags/v4.1.0.2
 
 VOLUME /config
 VOLUME /media/data
